@@ -1,0 +1,32 @@
+:root {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color: #ffffff;
+  background-color: #343434;
+  
+}
+.section {
+  height: 50px;
+  text-align: center;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  padding-left: 7px;
+}
+.container div {
+  background-color: #4b4b4b;
+  border-radius: 25px;
+  height: 350px;
+  width: 350px fit-content(100%);
+  
+}
+div {
+  padding-left: 7px;
+  padding-top: 2px;
+  padding-bottom: 7px;
+}

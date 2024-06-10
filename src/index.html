@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <script type="module" src="/main.js" defer></script>
+  </head>
+
+  <body>
+    <input class="create-task-name" type="text" placeholder="Enter task name">
+    <input class="create-task-priority" type="number" placeholder="Number from to 1-255 (more importante closer to 1)">
+    <input class="create-task" type="button" value="Create Task">
+    <div id="error-message" style="color: red; display: none;"></div>
+    <div id="task-container"></div>
+  </body>
+</html>
