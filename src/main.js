@@ -1,3 +1,7 @@
+import { listen } from '@tauri-apps/api/event';
+import { invoke } from '@tauri-apps/api/tauri';
+const invoke = window.__TAURI__.invoke
+
 const createTaskButton = document.querySelector('.create-task');
 const taskNameInput = document.querySelector('.create-task-name');
 const taskPriorityInput = document.querySelector('.create-task-priority');
@@ -6,10 +10,6 @@ const errorMessage = document.getElementById('error-message');
 
 let tasks = [];
 
-console.log("createTaskButton:", createTaskButton);
-console.log("taskNameInput:", taskNameInput);
-console.log("taskPriorityInput:", taskPriorityInput);
-
 createTaskButton.addEventListener('click', () => {
   console.log("Button clicked");
   const taskName = taskNameInput.value.trim();
@@ -17,6 +17,7 @@ createTaskButton.addEventListener('click', () => {
 
   console.log("taskName:", taskName);
   console.log("taskPriority:", taskPriority);
+  invoke('newTask', {task_name: taskName, priority: taskPriority});
 
   if (taskName && !isNaN(taskPriority) && taskPriority >= 1 && taskPriority <= 255) {
     console.log("Valid input");
